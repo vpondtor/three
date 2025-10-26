@@ -1,0 +1,14 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    "rootDir": "./src",
+    "outDir": "./build",
+
+    "module": "ESNext",      // important! ES module output
+    "target": "ESNext",      // allows modern JS features
+    "moduleResolution": "Node",
+    "esModuleInterop": true, // optional but recommended
+    "strict": true,
+  }
+}
