@@ -18,7 +18,7 @@ document.body.appendChild(renderer.domElement)
 const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
 const controls = new OrbitControls(camera, renderer.domElement)
 
-camera.position.set(0, 3, 3);
+camera.position.set(0, 100, 100);
 controls.update();
 
 // Clock
@@ -28,8 +28,8 @@ let internalTime = 0;
 // Register Environments
 const environments: SceneEnvironment[] = [];
 
-// TODO: @vpondtor find some way not to have to update this manually. Config file? Automatically detect files in ./scenes
-environments.push(STARS.create(1000, 500));
+// TODO: @vpondtor find some way not to have to update this manually. Config file? Automatically detect files in ./scenes?
+environments.push(STARS.create(1000, 100));
 environments.push(SADNBOX.create());
 environments.push(TEMPLATE.create());
 
