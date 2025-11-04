@@ -3,11 +3,12 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as STARS from './scenes/stars'
 import * as SADNBOX from './scenes/sandbox'
 import * as TEMPLATE from './scenes/template'
+import * as TRANSFORMATIONS from './scenes/transformations'
 import { SceneEnvironment } from './types/scene-environment'
 
 // Constants
 const TIMESCALE = 0.1;
-const DEFAULT_ENV_INDEX = 0;
+const DEFAULT_ENV_INDEX = 3;
 
 // Renderer
 const renderer = new THREE.WebGLRenderer();
@@ -18,7 +19,7 @@ document.body.appendChild(renderer.domElement)
 const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
 const controls = new OrbitControls(camera, renderer.domElement)
 
-camera.position.set(0, 100, 100);
+camera.position.set(1, 1, 1);
 controls.update();
 
 // Clock
@@ -32,6 +33,7 @@ const environments: SceneEnvironment[] = [];
 environments.push(STARS.create(1000, 100));
 environments.push(SADNBOX.create());
 environments.push(TEMPLATE.create());
+environments.push(TRANSFORMATIONS.create());
 
 let currentEnvironmentIndex = Math.min(DEFAULT_ENV_INDEX, environments.length - 1) 
 let currentEnvironment = environments[currentEnvironmentIndex];
